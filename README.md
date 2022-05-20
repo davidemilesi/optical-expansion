@@ -1,3 +1,3 @@
 # optical-expansion
 
-In costruzione, caricherò il codice nel pomeriggio
+Cddice originale, con print delle mappe in formato jpg
