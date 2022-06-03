@@ -1,0 +1,10 @@
+input/*
+*.pyc
+*.zip
+*.pfm
+*.pth
+output-mappa-raft/*
+output-raft/*.jpg
+output-VCN/*.jpg
+
+

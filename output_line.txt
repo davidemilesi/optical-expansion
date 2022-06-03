@@ -1,0 +1,3953 @@
+VCN(
+  (pspnet): pspnet(
+    (convbnrelu1_1): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (convbnrelu1_2): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (convbnrelu1_3): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block3): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block5): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block6): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block7): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (pyramid_pooling): pyramidPooling(
+      (path_module_list): ModuleList(
+        (0): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (2): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+      )
+      (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (upconv6): Sequential(
+      (0): Upsample(scale_factor=2.0, mode=nearest)
+      (1): conv2DBatchNormRelu(
+        (cbr_unit): Sequential(
+          (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): LeakyReLU(negative_slope=0.1, inplace=True)
+        )
+      )
+    )
+    (iconv5): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv5): Sequential(
+      (0): Upsample(scale_factor=2.0, mode=nearest)
+      (1): conv2DBatchNormRelu(
+        (cbr_unit): Sequential(
+          (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): LeakyReLU(negative_slope=0.1, inplace=True)
+        )
+      )
+    )
+    (iconv4): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv4): Sequential(
+      (0): Upsample(scale_factor=2.0, mode=nearest)
+      (1): conv2DBatchNormRelu(
+        (cbr_unit): Sequential(
+          (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): LeakyReLU(negative_slope=0.1, inplace=True)
+        )
+      )
+    )
+    (iconv3): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv3): Sequential(
+      (0): Upsample(scale_factor=2.0, mode=nearest)
+      (1): conv2DBatchNormRelu(
+        (cbr_unit): Sequential(
+          (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): LeakyReLU(negative_slope=0.1, inplace=True)
+        )
+      )
+    )
+    (iconv2): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+  )
+  (f6): butterfly4D(
+    (proj): Sequential(
+      (0): projfeat4d(
+        (conv1): Conv3d(128, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): ReLU(inplace=True)
+    )
+    (conva1): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (conva2): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb3): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb2): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb1): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (p6): sepConv4d(
+    (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+    (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+    (relu): ReLU(inplace=True)
+  )
+  (f5): butterfly4D(
+    (proj): Sequential(
+      (0): projfeat4d(
+        (conv1): Conv3d(128, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): ReLU(inplace=True)
+    )
+    (conva1): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (conva2): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb3): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb2): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb1): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (p5): sepConv4d(
+    (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+    (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+    (relu): ReLU(inplace=True)
+  )
+  (f4): butterfly4D(
+    (proj): Sequential(
+      (0): projfeat4d(
+        (conv1): Conv3d(128, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): ReLU(inplace=True)
+    )
+    (conva1): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (conva2): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb3): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb2): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb1): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (p4): sepConv4d(
+    (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+    (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+    (relu): ReLU(inplace=True)
+  )
+  (f3): butterfly4D(
+    (proj): Sequential(
+      (0): projfeat4d(
+        (conv1): Conv3d(64, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): ReLU(inplace=True)
+    )
+    (conva1): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (conva2): sepConv4dBlock(
+      (downsample): projfeat4d(
+        (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+        (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb3): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb2): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb1): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (p3): sepConv4d(
+    (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+    (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+    (relu): ReLU(inplace=True)
+  )
+  (f2): butterfly4D(
+    (proj): Sequential(
+      (0): projfeat4d(
+        (conv1): Conv3d(64, 12, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+        (bn): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): ReLU(inplace=True)
+    )
+    (conva1): sepConv4dBlock(
+      (downsample): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (conva2): sepConv4dBlock(
+      (downsample): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb3): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb2): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+    (convb1): sepConv4dBlock(
+      (conv1): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (conv2): sepConv4d(
+        (conv1): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv2): Sequential(
+          (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+          (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): ReLU(inplace=True)
+      )
+      (relu1): ReLU(inplace=True)
+      (relu2): ReLU(inplace=True)
+    )
+  )
+  (p2): sepConv4d(
+    (conv1): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+    (conv2): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+    (relu): ReLU(inplace=True)
+  )
+  (flow_reg64): flow_reg(
+    (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+  )
+  (flow_reg32): flow_reg(
+    (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+  )
+  (flow_reg16): flow_reg(
+    (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+  )
+  (flow_reg8): flow_reg(
+    (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+  )
+  (flow_reg4): flow_reg(
+    (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+  )
+  (warp5): WarpModule()
+  (warp4): WarpModule()
+  (warp3): WarpModule()
+  (warp2): WarpModule()
+  (dc6_conv1): Sequential(
+    (0): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc6_conv2): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc6_conv3): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc6_conv4): Sequential(
+    (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc6_conv5): Sequential(
+    (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc6_conv6): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc6_conv7): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (dc5_conv1): Sequential(
+    (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc5_conv2): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc5_conv3): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc5_conv4): Sequential(
+    (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc5_conv5): Sequential(
+    (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc5_conv6): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc5_conv7): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (dc4_conv1): Sequential(
+    (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc4_conv2): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc4_conv3): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc4_conv4): Sequential(
+    (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc4_conv5): Sequential(
+    (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc4_conv6): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc4_conv7): Conv2d(32, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (dc3_conv1): Sequential(
+    (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc3_conv2): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc3_conv3): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc3_conv4): Sequential(
+    (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc3_conv5): Sequential(
+    (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc3_conv6): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc3_conv7): Conv2d(32, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (dc2_conv1): Sequential(
+    (0): Conv2d(368, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc2_conv2): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc2_conv3): Sequential(
+    (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc2_conv4): Sequential(
+    (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+    (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc2_conv5): Sequential(
+    (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc2_conv6): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dc2_conv7): Conv2d(32, 152, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (dc6_conv): Sequential(
+    (0): Sequential(
+      (0): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc5_conv): Sequential(
+    (0): Sequential(
+      (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc4_conv): Sequential(
+    (0): Sequential(
+      (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc3_conv): Sequential(
+    (0): Sequential(
+      (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc2_conv): Sequential(
+    (0): Sequential(
+      (0): Conv2d(368, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 152, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc6_convo): Sequential(
+    (0): Sequential(
+      (0): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc5_convo): Sequential(
+    (0): Sequential(
+      (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc4_convo): Sequential(
+    (0): Sequential(
+      (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc3_convo): Sequential(
+    (0): Sequential(
+      (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dc2_convo): Sequential(
+    (0): Sequential(
+      (0): Conv2d(368, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (1): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (2): Sequential(
+      (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+      (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (4): Sequential(
+      (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (5): Sequential(
+      (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (f3d2v1): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (f3d2v2): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (f3d2v3): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (f3d2v4): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (f3d2v5): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (f3d2v6): Sequential(
+    (0): Conv2d(972, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (f3d2): bfmodule(
+    (proj): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block3): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block5): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block6): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block7): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (pyramid_pooling): pyramidPooling(
+      (path_module_list): ModuleList(
+        (0): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (2): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+      )
+      (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (upconv6): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv5): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv4): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv3): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv5): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv4): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv3): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv2): Sequential(
+      (0): conv2DBatchNormRelu(
+        (cbr_unit): Sequential(
+          (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): LeakyReLU(negative_slope=0.1, inplace=True)
+        )
+      )
+      (1): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (proj6): Conv2d(128, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (proj5): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (proj4): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (proj3): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (dcnetv1): Sequential(
+    (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dcnetv2): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dcnetv3): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dcnetv4): Sequential(
+    (0): Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dcnetv5): Sequential(
+    (0): Conv2d(972, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dcnetv6): Sequential(
+    (0): Conv2d(4, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.1, inplace=True)
+  )
+  (dcnet): bfmodule(
+    (proj): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block3): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block5): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block6): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 64, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (res_block7): Sequential(
+      (0): residualBlock(
+        (convbnrelu1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (convbn2): conv2DBatchNorm(
+          (cb_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (downsample): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (pyramid_pooling): pyramidPooling(
+      (path_module_list): ModuleList(
+        (0): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (1): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+        (2): conv2DBatchNormRelu(
+          (cbr_unit): Sequential(
+            (0): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): LeakyReLU(negative_slope=0.1, inplace=True)
+          )
+        )
+      )
+      (relu): LeakyReLU(negative_slope=0.1, inplace=True)
+    )
+    (upconv6): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv5): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv4): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (upconv3): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv5): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv4): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv3): conv2DBatchNormRelu(
+      (cbr_unit): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+    )
+    (iconv2): Sequential(
+      (0): conv2DBatchNormRelu(
+        (cbr_unit): Sequential(
+          (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): LeakyReLU(negative_slope=0.1, inplace=True)
+        )
+      )
+      (1): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (proj6): Conv2d(128, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (proj5): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (proj4): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (proj3): Conv2d(64, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  )
+  (warp_modules): ModuleList(
+    (0): None
+    (1): WarpModule()
+    (2): WarpModule()
+    (3): WarpModule()
+    (4): WarpModule()
+  )
+  (f_modules): ModuleList(
+    (0): butterfly4D(
+      (proj): Sequential(
+        (0): projfeat4d(
+          (conv1): Conv3d(128, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): ReLU(inplace=True)
+      )
+      (conva1): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (conva2): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb3): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb2): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb1): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+    )
+    (1): butterfly4D(
+      (proj): Sequential(
+        (0): projfeat4d(
+          (conv1): Conv3d(128, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): ReLU(inplace=True)
+      )
+      (conva1): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (conva2): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb3): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb2): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb1): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+    )
+    (2): butterfly4D(
+      (proj): Sequential(
+        (0): projfeat4d(
+          (conv1): Conv3d(128, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): ReLU(inplace=True)
+      )
+      (conva1): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (conva2): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb3): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb2): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb1): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+    )
+    (3): butterfly4D(
+      (proj): Sequential(
+        (0): projfeat4d(
+          (conv1): Conv3d(64, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): ReLU(inplace=True)
+      )
+      (conva1): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (conva2): sepConv4dBlock(
+        (downsample): projfeat4d(
+          (conv1): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+          (bn): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb3): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb2): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb1): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+    )
+    (4): butterfly4D(
+      (proj): Sequential(
+        (0): projfeat4d(
+          (conv1): Conv3d(64, 12, kernel_size=(1, 1, 1), stride=(1, 1, 1), bias=False)
+          (bn): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (1): ReLU(inplace=True)
+      )
+      (conva1): sepConv4dBlock(
+        (downsample): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (conva2): sepConv4dBlock(
+        (downsample): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(1, 2, 2), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 1, 1), stride=(2, 2, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(2, 2, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb3): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb2): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+      (convb1): sepConv4dBlock(
+        (conv1): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (conv2): sepConv4d(
+          (conv1): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (conv2): Sequential(
+            (0): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0), bias=False)
+            (1): BatchNorm3d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+          (relu): ReLU(inplace=True)
+        )
+        (relu1): ReLU(inplace=True)
+        (relu2): ReLU(inplace=True)
+      )
+    )
+  )
+  (p_modules): ModuleList(
+    (0): sepConv4d(
+      (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+      (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+      (relu): ReLU(inplace=True)
+    )
+    (1): sepConv4d(
+      (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+      (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+      (relu): ReLU(inplace=True)
+    )
+    (2): sepConv4d(
+      (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+      (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+      (relu): ReLU(inplace=True)
+    )
+    (3): sepConv4d(
+      (conv1): Conv3d(16, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+      (conv2): Conv3d(16, 16, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+      (relu): ReLU(inplace=True)
+    )
+    (4): sepConv4d(
+      (conv1): Conv3d(12, 12, kernel_size=(1, 3, 3), stride=(1, 1, 1), padding=(0, 1, 1))
+      (conv2): Conv3d(12, 12, kernel_size=(3, 3, 1), stride=(1, 1, 1), padding=(1, 1, 0))
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (reg_modules): ModuleList(
+    (0): flow_reg(
+      (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+    )
+    (1): flow_reg(
+      (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+    )
+    (2): flow_reg(
+      (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+    )
+    (3): flow_reg(
+      (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+    )
+    (4): flow_reg(
+      (pool3d): MaxPool3d(kernel_size=(7, 7, 1), stride=1, padding=(3, 3, 0), dilation=1, ceil_mode=False)
+    )
+  )
+  (oor_modules): ModuleList(
+    (0): Sequential(
+      (0): Sequential(
+        (0): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (1): Sequential(
+      (0): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (2): Sequential(
+      (0): Sequential(
+        (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (3): Sequential(
+      (0): Sequential(
+        (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (4): Sequential(
+      (0): Sequential(
+        (0): Conv2d(368, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+  (fuse_modules): ModuleList(
+    (0): Sequential(
+      (0): Sequential(
+        (0): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (1): Sequential(
+      (0): Sequential(
+        (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (2): Sequential(
+      (0): Sequential(
+        (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (3): Sequential(
+      (0): Sequential(
+        (0): Conv2d(320, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+    (4): Sequential(
+      (0): Sequential(
+        (0): Conv2d(368, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (1): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2), dilation=(2, 2))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(4, 4), dilation=(4, 4))
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (3): Sequential(
+        (0): Conv2d(128, 96, kernel_size=(3, 3), stride=(1, 1), padding=(8, 8), dilation=(8, 8))
+        (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (4): Sequential(
+        (0): Conv2d(96, 64, kernel_size=(3, 3), stride=(1, 1), padding=(16, 16), dilation=(16, 16))
+        (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (5): Sequential(
+        (0): Conv2d(64, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): LeakyReLU(negative_slope=0.1, inplace=True)
+      )
+      (6): Conv2d(32, 152, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    )
+  )
+)
+
+===========================================================================
+Layer (type:depth-idx)                             Param #
+===========================================================================
+VCN                                                --
+├─pspnet: 1-1                                      --
+│    └─conv2DBatchNormRelu: 2-1                    --
+│    │    └─Sequential: 3-1                        464
+│    └─conv2DBatchNormRelu: 2-2                    --
+│    │    └─Sequential: 3-2                        2,336
+│    └─conv2DBatchNormRelu: 2-3                    --
+│    │    └─Sequential: 3-3                        4,672
+│    └─Sequential: 2-4                             --
+│    │    └─residualBlock: 3-4                     57,728
+│    └─Sequential: 2-5                             --
+│    │    └─residualBlock: 3-5                     230,144
+│    └─Sequential: 2-6                             --
+│    │    └─residualBlock: 3-6                     312,064
+│    └─Sequential: 2-7                             --
+│    │    └─residualBlock: 3-7                     312,064
+│    └─pyramidPooling: 2-8                         --
+│    │    └─ModuleList: 3-8                        49,920
+│    │    └─LeakyReLU: 3-9                         --
+│    └─Sequential: 2-9                             --
+│    │    └─Upsample: 3-10                         --
+│    │    └─conv2DBatchNormRelu: 3-11              73,856
+│    └─conv2DBatchNormRelu: 2-10                   --
+│    │    └─Sequential: 3-12                       221,440
+│    └─Sequential: 2-11                            --
+│    │    └─Upsample: 3-13                         --
+│    │    └─conv2DBatchNormRelu: 3-14              73,856
+│    └─conv2DBatchNormRelu: 2-12                   --
+│    │    └─Sequential: 3-15                       221,440
+│    └─Sequential: 2-13                            --
+│    │    └─Upsample: 3-16                         --
+│    │    └─conv2DBatchNormRelu: 3-17              73,856
+│    └─conv2DBatchNormRelu: 2-14                   --
+│    │    └─Sequential: 3-18                       73,856
+│    └─Sequential: 2-15                            --
+│    │    └─Upsample: 3-19                         --
+│    │    └─conv2DBatchNormRelu: 3-20              18,496
+│    └─conv2DBatchNormRelu: 2-16                   --
+│    │    └─Sequential: 3-21                       36,992
+├─butterfly4D: 1-2                                 --
+│    └─Sequential: 2-17                            --
+│    │    └─projfeat4d: 3-22                       2,080
+│    │    └─ReLU: 3-23                             --
+│    └─sepConv4dBlock: 2-18                        --
+│    │    └─projfeat4d: 3-24                       288
+│    │    └─sepConv4d: 3-25                        4,672
+│    │    └─sepConv4d: 3-26                        4,672
+│    │    └─ReLU: 3-27                             --
+│    │    └─ReLU: 3-28                             --
+│    └─sepConv4dBlock: 2-19                        --
+│    │    └─projfeat4d: 3-29                       288
+│    │    └─sepConv4d: 3-30                        4,672
+│    │    └─sepConv4d: 3-31                        4,672
+│    │    └─ReLU: 3-32                             --
+│    │    └─ReLU: 3-33                             --
+│    └─sepConv4dBlock: 2-20                        --
+│    │    └─sepConv4d: 3-34                        4,672
+│    │    └─sepConv4d: 3-35                        4,672
+│    │    └─ReLU: 3-36                             --
+│    │    └─ReLU: 3-37                             --
+│    └─sepConv4dBlock: 2-21                        --
+│    │    └─sepConv4d: 3-38                        4,672
+│    │    └─sepConv4d: 3-39                        4,672
+│    │    └─ReLU: 3-40                             --
+│    │    └─ReLU: 3-41                             --
+│    └─sepConv4dBlock: 2-22                        --
+│    │    └─sepConv4d: 3-42                        4,672
+│    │    └─sepConv4d: 3-43                        4,672
+│    │    └─ReLU: 3-44                             --
+│    │    └─ReLU: 3-45                             --
+├─sepConv4d: 1-3                                   --
+│    └─Conv3d: 2-23                                2,320
+│    └─Conv3d: 2-24                                2,320
+│    └─ReLU: 2-25                                  --
+├─butterfly4D: 1-4                                 --
+│    └─Sequential: 2-26                            --
+│    │    └─projfeat4d: 3-46                       2,080
+│    │    └─ReLU: 3-47                             --
+│    └─sepConv4dBlock: 2-27                        --
+│    │    └─projfeat4d: 3-48                       288
+│    │    └─sepConv4d: 3-49                        4,672
+│    │    └─sepConv4d: 3-50                        4,672
+│    │    └─ReLU: 3-51                             --
+│    │    └─ReLU: 3-52                             --
+│    └─sepConv4dBlock: 2-28                        --
+│    │    └─projfeat4d: 3-53                       288
+│    │    └─sepConv4d: 3-54                        4,672
+│    │    └─sepConv4d: 3-55                        4,672
+│    │    └─ReLU: 3-56                             --
+│    │    └─ReLU: 3-57                             --
+│    └─sepConv4dBlock: 2-29                        --
+│    │    └─sepConv4d: 3-58                        4,672
+│    │    └─sepConv4d: 3-59                        4,672
+│    │    └─ReLU: 3-60                             --
+│    │    └─ReLU: 3-61                             --
+│    └─sepConv4dBlock: 2-30                        --
+│    │    └─sepConv4d: 3-62                        4,672
+│    │    └─sepConv4d: 3-63                        4,672
+│    │    └─ReLU: 3-64                             --
+│    │    └─ReLU: 3-65                             --
+│    └─sepConv4dBlock: 2-31                        --
+│    │    └─sepConv4d: 3-66                        4,672
+│    │    └─sepConv4d: 3-67                        4,672
+│    │    └─ReLU: 3-68                             --
+│    │    └─ReLU: 3-69                             --
+├─sepConv4d: 1-5                                   --
+│    └─Conv3d: 2-32                                2,320
+│    └─Conv3d: 2-33                                2,320
+│    └─ReLU: 2-34                                  --
+├─butterfly4D: 1-6                                 --
+│    └─Sequential: 2-35                            --
+│    │    └─projfeat4d: 3-70                       2,080
+│    │    └─ReLU: 3-71                             --
+│    └─sepConv4dBlock: 2-36                        --
+│    │    └─projfeat4d: 3-72                       288
+│    │    └─sepConv4d: 3-73                        4,672
+│    │    └─sepConv4d: 3-74                        4,672
+│    │    └─ReLU: 3-75                             --
+│    │    └─ReLU: 3-76                             --
+│    └─sepConv4dBlock: 2-37                        --
+│    │    └─projfeat4d: 3-77                       288
+│    │    └─sepConv4d: 3-78                        4,672
+│    │    └─sepConv4d: 3-79                        4,672
+│    │    └─ReLU: 3-80                             --
+│    │    └─ReLU: 3-81                             --
+│    └─sepConv4dBlock: 2-38                        --
+│    │    └─sepConv4d: 3-82                        4,672
+│    │    └─sepConv4d: 3-83                        4,672
+│    │    └─ReLU: 3-84                             --
+│    │    └─ReLU: 3-85                             --
+│    └─sepConv4dBlock: 2-39                        --
+│    │    └─sepConv4d: 3-86                        4,672
+│    │    └─sepConv4d: 3-87                        4,672
+│    │    └─ReLU: 3-88                             --
+│    │    └─ReLU: 3-89                             --
+│    └─sepConv4dBlock: 2-40                        --
+│    │    └─sepConv4d: 3-90                        4,672
+│    │    └─sepConv4d: 3-91                        4,672
+│    │    └─ReLU: 3-92                             --
+│    │    └─ReLU: 3-93                             --
+├─sepConv4d: 1-7                                   --
+│    └─Conv3d: 2-41                                2,320
+│    └─Conv3d: 2-42                                2,320
+│    └─ReLU: 2-43                                  --
+├─butterfly4D: 1-8                                 --
+│    └─Sequential: 2-44                            --
+│    │    └─projfeat4d: 3-94                       1,056
+│    │    └─ReLU: 3-95                             --
+│    └─sepConv4dBlock: 2-45                        --
+│    │    └─projfeat4d: 3-96                       288
+│    │    └─sepConv4d: 3-97                        4,672
+│    │    └─sepConv4d: 3-98                        4,672
+│    │    └─ReLU: 3-99                             --
+│    │    └─ReLU: 3-100                            --
+│    └─sepConv4dBlock: 2-46                        --
+│    │    └─projfeat4d: 3-101                      288
+│    │    └─sepConv4d: 3-102                       4,672
+│    │    └─sepConv4d: 3-103                       4,672
+│    │    └─ReLU: 3-104                            --
+│    │    └─ReLU: 3-105                            --
+│    └─sepConv4dBlock: 2-47                        --
+│    │    └─sepConv4d: 3-106                       4,672
+│    │    └─sepConv4d: 3-107                       4,672
+│    │    └─ReLU: 3-108                            --
+│    │    └─ReLU: 3-109                            --
+│    └─sepConv4dBlock: 2-48                        --
+│    │    └─sepConv4d: 3-110                       4,672
+│    │    └─sepConv4d: 3-111                       4,672
+│    │    └─ReLU: 3-112                            --
+│    │    └─ReLU: 3-113                            --
+│    └─sepConv4dBlock: 2-49                        --
+│    │    └─sepConv4d: 3-114                       4,672
+│    │    └─sepConv4d: 3-115                       4,672
+│    │    └─ReLU: 3-116                            --
+│    │    └─ReLU: 3-117                            --
+├─sepConv4d: 1-9                                   --
+│    └─Conv3d: 2-50                                2,320
+│    └─Conv3d: 2-51                                2,320
+│    └─ReLU: 2-52                                  --
+├─butterfly4D: 1-10                                --
+│    └─Sequential: 2-53                            --
+│    │    └─projfeat4d: 3-118                      792
+│    │    └─ReLU: 3-119                            --
+│    └─sepConv4dBlock: 2-54                        --
+│    │    └─sepConv4d: 3-120                       336
+│    │    └─sepConv4d: 3-121                       2,640
+│    │    └─sepConv4d: 3-122                       2,640
+│    │    └─ReLU: 3-123                            --
+│    │    └─ReLU: 3-124                            --
+│    └─sepConv4dBlock: 2-55                        --
+│    │    └─sepConv4d: 3-125                       336
+│    │    └─sepConv4d: 3-126                       2,640
+│    │    └─sepConv4d: 3-127                       2,640
+│    │    └─ReLU: 3-128                            --
+│    │    └─ReLU: 3-129                            --
+│    └─sepConv4dBlock: 2-56                        --
+│    │    └─sepConv4d: 3-130                       2,640
+│    │    └─sepConv4d: 3-131                       2,640
+│    │    └─ReLU: 3-132                            --
+│    │    └─ReLU: 3-133                            --
+│    └─sepConv4dBlock: 2-57                        --
+│    │    └─sepConv4d: 3-134                       2,640
+│    │    └─sepConv4d: 3-135                       2,640
+│    │    └─ReLU: 3-136                            --
+│    │    └─ReLU: 3-137                            --
+│    └─sepConv4dBlock: 2-58                        --
+│    │    └─sepConv4d: 3-138                       2,640
+│    │    └─sepConv4d: 3-139                       2,640
+│    │    └─ReLU: 3-140                            --
+│    │    └─ReLU: 3-141                            --
+├─sepConv4d: 1-11                                  --
+│    └─Conv3d: 2-59                                1,308
+│    └─Conv3d: 2-60                                1,308
+│    └─ReLU: 2-61                                  --
+├─flow_reg: 1-12                                   --
+│    └─MaxPool3d: 2-62                             --
+├─flow_reg: 1-13                                   --
+│    └─MaxPool3d: 2-63                             --
+├─flow_reg: 1-14                                   --
+│    └─MaxPool3d: 2-64                             --
+├─flow_reg: 1-15                                   --
+│    └─MaxPool3d: 2-65                             --
+├─flow_reg: 1-16                                   --
+│    └─MaxPool3d: 2-66                             --
+├─WarpModule: 1-17                                 --
+├─WarpModule: 1-18                                 --
+├─WarpModule: 1-19                                 --
+├─WarpModule: 1-20                                 --
+├─Sequential: 1-21                                 --
+│    └─Conv2d: 2-67                                221,312
+│    └─BatchNorm2d: 2-68                           256
+│    └─LeakyReLU: 2-69                             --
+├─Sequential: 1-22                                 --
+│    └─Conv2d: 2-70                                147,584
+│    └─BatchNorm2d: 2-71                           256
+│    └─LeakyReLU: 2-72                             --
+├─Sequential: 1-23                                 --
+│    └─Conv2d: 2-73                                147,584
+│    └─BatchNorm2d: 2-74                           256
+│    └─LeakyReLU: 2-75                             --
+├─Sequential: 1-24                                 --
+│    └─Conv2d: 2-76                                110,688
+│    └─BatchNorm2d: 2-77                           192
+│    └─LeakyReLU: 2-78                             --
+├─Sequential: 1-25                                 --
+│    └─Conv2d: 2-79                                55,360
+│    └─BatchNorm2d: 2-80                           128
+│    └─LeakyReLU: 2-81                             --
+├─Sequential: 1-26                                 --
+│    └─Conv2d: 2-82                                18,464
+│    └─BatchNorm2d: 2-83                           64
+│    └─LeakyReLU: 2-84                             --
+├─Conv2d: 1-27                                     9,248
+├─Sequential: 1-28                                 --
+│    └─Conv2d: 2-85                                295,040
+│    └─BatchNorm2d: 2-86                           256
+│    └─LeakyReLU: 2-87                             --
+├─Sequential: 1-29                                 --
+│    └─Conv2d: 2-88                                147,584
+│    └─BatchNorm2d: 2-89                           256
+│    └─LeakyReLU: 2-90                             --
+├─Sequential: 1-30                                 --
+│    └─Conv2d: 2-91                                147,584
+│    └─BatchNorm2d: 2-92                           256
+│    └─LeakyReLU: 2-93                             --
+├─Sequential: 1-31                                 --
+│    └─Conv2d: 2-94                                110,688
+│    └─BatchNorm2d: 2-95                           192
+│    └─LeakyReLU: 2-96                             --
+├─Sequential: 1-32                                 --
+│    └─Conv2d: 2-97                                55,360
+│    └─BatchNorm2d: 2-98                           128
+│    └─LeakyReLU: 2-99                             --
+├─Sequential: 1-33                                 --
+│    └─Conv2d: 2-100                               18,464
+│    └─BatchNorm2d: 2-101                          64
+│    └─LeakyReLU: 2-102                            --
+├─Conv2d: 1-34                                     18,496
+├─Sequential: 1-35                                 --
+│    └─Conv2d: 2-103                               368,768
+│    └─BatchNorm2d: 2-104                          256
+│    └─LeakyReLU: 2-105                            --
+├─Sequential: 1-36                                 --
+│    └─Conv2d: 2-106                               147,584
+│    └─BatchNorm2d: 2-107                          256
+│    └─LeakyReLU: 2-108                            --
+├─Sequential: 1-37                                 --
+│    └─Conv2d: 2-109                               147,584
+│    └─BatchNorm2d: 2-110                          256
+│    └─LeakyReLU: 2-111                            --
+├─Sequential: 1-38                                 --
+│    └─Conv2d: 2-112                               110,688
+│    └─BatchNorm2d: 2-113                          192
+│    └─LeakyReLU: 2-114                            --
+├─Sequential: 1-39                                 --
+│    └─Conv2d: 2-115                               55,360
+│    └─BatchNorm2d: 2-116                          128
+│    └─LeakyReLU: 2-117                            --
+├─Sequential: 1-40                                 --
+│    └─Conv2d: 2-118                               18,464
+│    └─BatchNorm2d: 2-119                          64
+│    └─LeakyReLU: 2-120                            --
+├─Conv2d: 1-41                                     27,744
+├─Sequential: 1-42                                 --
+│    └─Conv2d: 2-121                               368,768
+│    └─BatchNorm2d: 2-122                          256
+│    └─LeakyReLU: 2-123                            --
+├─Sequential: 1-43                                 --
+│    └─Conv2d: 2-124                               147,584
+│    └─BatchNorm2d: 2-125                          256
+│    └─LeakyReLU: 2-126                            --
+├─Sequential: 1-44                                 --
+│    └─Conv2d: 2-127                               147,584
+│    └─BatchNorm2d: 2-128                          256
+│    └─LeakyReLU: 2-129                            --
+├─Sequential: 1-45                                 --
+│    └─Conv2d: 2-130                               110,688
+│    └─BatchNorm2d: 2-131                          192
+│    └─LeakyReLU: 2-132                            --
+├─Sequential: 1-46                                 --
+│    └─Conv2d: 2-133                               55,360
+│    └─BatchNorm2d: 2-134                          128
+│    └─LeakyReLU: 2-135                            --
+├─Sequential: 1-47                                 --
+│    └─Conv2d: 2-136                               18,464
+│    └─BatchNorm2d: 2-137                          64
+│    └─LeakyReLU: 2-138                            --
+├─Conv2d: 1-48                                     36,992
+├─Sequential: 1-49                                 --
+│    └─Conv2d: 2-139                               424,064
+│    └─BatchNorm2d: 2-140                          256
+│    └─LeakyReLU: 2-141                            --
+├─Sequential: 1-50                                 --
+│    └─Conv2d: 2-142                               147,584
+│    └─BatchNorm2d: 2-143                          256
+│    └─LeakyReLU: 2-144                            --
+├─Sequential: 1-51                                 --
+│    └─Conv2d: 2-145                               147,584
+│    └─BatchNorm2d: 2-146                          256
+│    └─LeakyReLU: 2-147                            --
+├─Sequential: 1-52                                 --
+│    └─Conv2d: 2-148                               110,688
+│    └─BatchNorm2d: 2-149                          192
+│    └─LeakyReLU: 2-150                            --
+├─Sequential: 1-53                                 --
+│    └─Conv2d: 2-151                               55,360
+│    └─BatchNorm2d: 2-152                          128
+│    └─LeakyReLU: 2-153                            --
+├─Sequential: 1-54                                 --
+│    └─Conv2d: 2-154                               18,464
+│    └─BatchNorm2d: 2-155                          64
+│    └─LeakyReLU: 2-156                            --
+├─Conv2d: 1-55                                     43,928
+├─Sequential: 1-56                                 --
+│    └─Sequential: 2-157                           (recursive)
+│    │    └─Conv2d: 3-142                          (recursive)
+│    │    └─BatchNorm2d: 3-143                     (recursive)
+│    │    └─LeakyReLU: 3-144                       --
+│    └─Sequential: 2-158                           (recursive)
+│    │    └─Conv2d: 3-145                          (recursive)
+│    │    └─BatchNorm2d: 3-146                     (recursive)
+│    │    └─LeakyReLU: 3-147                       --
+│    └─Sequential: 2-159                           (recursive)
+│    │    └─Conv2d: 3-148                          (recursive)
+│    │    └─BatchNorm2d: 3-149                     (recursive)
+│    │    └─LeakyReLU: 3-150                       --
+│    └─Sequential: 2-160                           (recursive)
+│    │    └─Conv2d: 3-151                          (recursive)
+│    │    └─BatchNorm2d: 3-152                     (recursive)
+│    │    └─LeakyReLU: 3-153                       --
+│    └─Sequential: 2-161                           (recursive)
+│    │    └─Conv2d: 3-154                          (recursive)
+│    │    └─BatchNorm2d: 3-155                     (recursive)
+│    │    └─LeakyReLU: 3-156                       --
+│    └─Sequential: 2-162                           (recursive)
+│    │    └─Conv2d: 3-157                          (recursive)
+│    │    └─BatchNorm2d: 3-158                     (recursive)
+│    │    └─LeakyReLU: 3-159                       --
+│    └─Conv2d: 2-163                               (recursive)
+├─Sequential: 1-57                                 --
+│    └─Sequential: 2-164                           (recursive)
+│    │    └─Conv2d: 3-160                          (recursive)
+│    │    └─BatchNorm2d: 3-161                     (recursive)
+│    │    └─LeakyReLU: 3-162                       --
+│    └─Sequential: 2-165                           (recursive)
+│    │    └─Conv2d: 3-163                          (recursive)
+│    │    └─BatchNorm2d: 3-164                     (recursive)
+│    │    └─LeakyReLU: 3-165                       --
+│    └─Sequential: 2-166                           (recursive)
+│    │    └─Conv2d: 3-166                          (recursive)
+│    │    └─BatchNorm2d: 3-167                     (recursive)
+│    │    └─LeakyReLU: 3-168                       --
+│    └─Sequential: 2-167                           (recursive)
+│    │    └─Conv2d: 3-169                          (recursive)
+│    │    └─BatchNorm2d: 3-170                     (recursive)
+│    │    └─LeakyReLU: 3-171                       --
+│    └─Sequential: 2-168                           (recursive)
+│    │    └─Conv2d: 3-172                          (recursive)
+│    │    └─BatchNorm2d: 3-173                     (recursive)
+│    │    └─LeakyReLU: 3-174                       --
+│    └─Sequential: 2-169                           (recursive)
+│    │    └─Conv2d: 3-175                          (recursive)
+│    │    └─BatchNorm2d: 3-176                     (recursive)
+│    │    └─LeakyReLU: 3-177                       --
+│    └─Conv2d: 2-170                               (recursive)
+├─Sequential: 1-58                                 --
+│    └─Sequential: 2-171                           (recursive)
+│    │    └─Conv2d: 3-178                          (recursive)
+│    │    └─BatchNorm2d: 3-179                     (recursive)
+│    │    └─LeakyReLU: 3-180                       --
+│    └─Sequential: 2-172                           (recursive)
+│    │    └─Conv2d: 3-181                          (recursive)
+│    │    └─BatchNorm2d: 3-182                     (recursive)
+│    │    └─LeakyReLU: 3-183                       --
+│    └─Sequential: 2-173                           (recursive)
+│    │    └─Conv2d: 3-184                          (recursive)
+│    │    └─BatchNorm2d: 3-185                     (recursive)
+│    │    └─LeakyReLU: 3-186                       --
+│    └─Sequential: 2-174                           (recursive)
+│    │    └─Conv2d: 3-187                          (recursive)
+│    │    └─BatchNorm2d: 3-188                     (recursive)
+│    │    └─LeakyReLU: 3-189                       --
+│    └─Sequential: 2-175                           (recursive)
+│    │    └─Conv2d: 3-190                          (recursive)
+│    │    └─BatchNorm2d: 3-191                     (recursive)
+│    │    └─LeakyReLU: 3-192                       --
+│    └─Sequential: 2-176                           (recursive)
+│    │    └─Conv2d: 3-193                          (recursive)
+│    │    └─BatchNorm2d: 3-194                     (recursive)
+│    │    └─LeakyReLU: 3-195                       --
+│    └─Conv2d: 2-177                               (recursive)
+├─Sequential: 1-59                                 --
+│    └─Sequential: 2-178                           (recursive)
+│    │    └─Conv2d: 3-196                          (recursive)
+│    │    └─BatchNorm2d: 3-197                     (recursive)
+│    │    └─LeakyReLU: 3-198                       --
+│    └─Sequential: 2-179                           (recursive)
+│    │    └─Conv2d: 3-199                          (recursive)
+│    │    └─BatchNorm2d: 3-200                     (recursive)
+│    │    └─LeakyReLU: 3-201                       --
+│    └─Sequential: 2-180                           (recursive)
+│    │    └─Conv2d: 3-202                          (recursive)
+│    │    └─BatchNorm2d: 3-203                     (recursive)
+│    │    └─LeakyReLU: 3-204                       --
+│    └─Sequential: 2-181                           (recursive)
+│    │    └─Conv2d: 3-205                          (recursive)
+│    │    └─BatchNorm2d: 3-206                     (recursive)
+│    │    └─LeakyReLU: 3-207                       --
+│    └─Sequential: 2-182                           (recursive)
+│    │    └─Conv2d: 3-208                          (recursive)
+│    │    └─BatchNorm2d: 3-209                     (recursive)
+│    │    └─LeakyReLU: 3-210                       --
+│    └─Sequential: 2-183                           (recursive)
+│    │    └─Conv2d: 3-211                          (recursive)
+│    │    └─BatchNorm2d: 3-212                     (recursive)
+│    │    └─LeakyReLU: 3-213                       --
+│    └─Conv2d: 2-184                               (recursive)
+├─Sequential: 1-60                                 --
+│    └─Sequential: 2-185                           (recursive)
+│    │    └─Conv2d: 3-214                          (recursive)
+│    │    └─BatchNorm2d: 3-215                     (recursive)
+│    │    └─LeakyReLU: 3-216                       --
+│    └─Sequential: 2-186                           (recursive)
+│    │    └─Conv2d: 3-217                          (recursive)
+│    │    └─BatchNorm2d: 3-218                     (recursive)
+│    │    └─LeakyReLU: 3-219                       --
+│    └─Sequential: 2-187                           (recursive)
+│    │    └─Conv2d: 3-220                          (recursive)
+│    │    └─BatchNorm2d: 3-221                     (recursive)
+│    │    └─LeakyReLU: 3-222                       --
+│    └─Sequential: 2-188                           (recursive)
+│    │    └─Conv2d: 3-223                          (recursive)
+│    │    └─BatchNorm2d: 3-224                     (recursive)
+│    │    └─LeakyReLU: 3-225                       --
+│    └─Sequential: 2-189                           (recursive)
+│    │    └─Conv2d: 3-226                          (recursive)
+│    │    └─BatchNorm2d: 3-227                     (recursive)
+│    │    └─LeakyReLU: 3-228                       --
+│    └─Sequential: 2-190                           (recursive)
+│    │    └─Conv2d: 3-229                          (recursive)
+│    │    └─BatchNorm2d: 3-230                     (recursive)
+│    │    └─LeakyReLU: 3-231                       --
+│    └─Conv2d: 2-191                               (recursive)
+├─Sequential: 1-61                                 --
+│    └─Sequential: 2-192                           --
+│    │    └─Conv2d: 3-232                          221,312
+│    │    └─BatchNorm2d: 3-233                     256
+│    │    └─LeakyReLU: 3-234                       --
+│    └─Sequential: 2-193                           --
+│    │    └─Conv2d: 3-235                          147,584
+│    │    └─BatchNorm2d: 3-236                     256
+│    │    └─LeakyReLU: 3-237                       --
+│    └─Sequential: 2-194                           --
+│    │    └─Conv2d: 3-238                          147,584
+│    │    └─BatchNorm2d: 3-239                     256
+│    │    └─LeakyReLU: 3-240                       --
+│    └─Sequential: 2-195                           --
+│    │    └─Conv2d: 3-241                          110,688
+│    │    └─BatchNorm2d: 3-242                     192
+│    │    └─LeakyReLU: 3-243                       --
+│    └─Sequential: 2-196                           --
+│    │    └─Conv2d: 3-244                          55,360
+│    │    └─BatchNorm2d: 3-245                     128
+│    │    └─LeakyReLU: 3-246                       --
+│    └─Sequential: 2-197                           --
+│    │    └─Conv2d: 3-247                          18,464
+│    │    └─BatchNorm2d: 3-248                     64
+│    │    └─LeakyReLU: 3-249                       --
+│    └─Conv2d: 2-198                               289
+├─Sequential: 1-62                                 --
+│    └─Sequential: 2-199                           --
+│    │    └─Conv2d: 3-250                          295,040
+│    │    └─BatchNorm2d: 3-251                     256
+│    │    └─LeakyReLU: 3-252                       --
+│    └─Sequential: 2-200                           --
+│    │    └─Conv2d: 3-253                          147,584
+│    │    └─BatchNorm2d: 3-254                     256
+│    │    └─LeakyReLU: 3-255                       --
+│    └─Sequential: 2-201                           --
+│    │    └─Conv2d: 3-256                          147,584
+│    │    └─BatchNorm2d: 3-257                     256
+│    │    └─LeakyReLU: 3-258                       --
+│    └─Sequential: 2-202                           --
+│    │    └─Conv2d: 3-259                          110,688
+│    │    └─BatchNorm2d: 3-260                     192
+│    │    └─LeakyReLU: 3-261                       --
+│    └─Sequential: 2-203                           --
+│    │    └─Conv2d: 3-262                          55,360
+│    │    └─BatchNorm2d: 3-263                     128
+│    │    └─LeakyReLU: 3-264                       --
+│    └─Sequential: 2-204                           --
+│    │    └─Conv2d: 3-265                          18,464
+│    │    └─BatchNorm2d: 3-266                     64
+│    │    └─LeakyReLU: 3-267                       --
+│    └─Conv2d: 2-205                               289
+├─Sequential: 1-63                                 --
+│    └─Sequential: 2-206                           --
+│    │    └─Conv2d: 3-268                          368,768
+│    │    └─BatchNorm2d: 3-269                     256
+│    │    └─LeakyReLU: 3-270                       --
+│    └─Sequential: 2-207                           --
+│    │    └─Conv2d: 3-271                          147,584
+│    │    └─BatchNorm2d: 3-272                     256
+│    │    └─LeakyReLU: 3-273                       --
+│    └─Sequential: 2-208                           --
+│    │    └─Conv2d: 3-274                          147,584
+│    │    └─BatchNorm2d: 3-275                     256
+│    │    └─LeakyReLU: 3-276                       --
+│    └─Sequential: 2-209                           --
+│    │    └─Conv2d: 3-277                          110,688
+│    │    └─BatchNorm2d: 3-278                     192
+│    │    └─LeakyReLU: 3-279                       --
+│    └─Sequential: 2-210                           --
+│    │    └─Conv2d: 3-280                          55,360
+│    │    └─BatchNorm2d: 3-281                     128
+│    │    └─LeakyReLU: 3-282                       --
+│    └─Sequential: 2-211                           --
+│    │    └─Conv2d: 3-283                          18,464
+│    │    └─BatchNorm2d: 3-284                     64
+│    │    └─LeakyReLU: 3-285                       --
+│    └─Conv2d: 2-212                               289
+├─Sequential: 1-64                                 --
+│    └─Sequential: 2-213                           --
+│    │    └─Conv2d: 3-286                          368,768
+│    │    └─BatchNorm2d: 3-287                     256
+│    │    └─LeakyReLU: 3-288                       --
+│    └─Sequential: 2-214                           --
+│    │    └─Conv2d: 3-289                          147,584
+│    │    └─BatchNorm2d: 3-290                     256
+│    │    └─LeakyReLU: 3-291                       --
+│    └─Sequential: 2-215                           --
+│    │    └─Conv2d: 3-292                          147,584
+│    │    └─BatchNorm2d: 3-293                     256
+│    │    └─LeakyReLU: 3-294                       --
+│    └─Sequential: 2-216                           --
+│    │    └─Conv2d: 3-295                          110,688
+│    │    └─BatchNorm2d: 3-296                     192
+│    │    └─LeakyReLU: 3-297                       --
+│    └─Sequential: 2-217                           --
+│    │    └─Conv2d: 3-298                          55,360
+│    │    └─BatchNorm2d: 3-299                     128
+│    │    └─LeakyReLU: 3-300                       --
+│    └─Sequential: 2-218                           --
+│    │    └─Conv2d: 3-301                          18,464
+│    │    └─BatchNorm2d: 3-302                     64
+│    │    └─LeakyReLU: 3-303                       --
+│    └─Conv2d: 2-219                               289
+├─Sequential: 1-65                                 --
+│    └─Sequential: 2-220                           --
+│    │    └─Conv2d: 3-304                          424,064
+│    │    └─BatchNorm2d: 3-305                     256
+│    │    └─LeakyReLU: 3-306                       --
+│    └─Sequential: 2-221                           --
+│    │    └─Conv2d: 3-307                          147,584
+│    │    └─BatchNorm2d: 3-308                     256
+│    │    └─LeakyReLU: 3-309                       --
+│    └─Sequential: 2-222                           --
+│    │    └─Conv2d: 3-310                          147,584
+│    │    └─BatchNorm2d: 3-311                     256
+│    │    └─LeakyReLU: 3-312                       --
+│    └─Sequential: 2-223                           --
+│    │    └─Conv2d: 3-313                          110,688
+│    │    └─BatchNorm2d: 3-314                     192
+│    │    └─LeakyReLU: 3-315                       --
+│    └─Sequential: 2-224                           --
+│    │    └─Conv2d: 3-316                          55,360
+│    │    └─BatchNorm2d: 3-317                     128
+│    │    └─LeakyReLU: 3-318                       --
+│    └─Sequential: 2-225                           --
+│    │    └─Conv2d: 3-319                          18,464
+│    │    └─BatchNorm2d: 3-320                     64
+│    │    └─LeakyReLU: 3-321                       --
+│    └─Conv2d: 2-226                               289
+├─Sequential: 1-66                                 --
+│    └─Conv2d: 2-227                               18,464
+│    └─BatchNorm2d: 2-228                          64
+│    └─LeakyReLU: 2-229                            --
+├─Sequential: 1-67                                 --
+│    └─Conv2d: 2-230                               320
+│    └─BatchNorm2d: 2-231                          64
+│    └─LeakyReLU: 2-232                            --
+├─Sequential: 1-68                                 --
+│    └─Conv2d: 2-233                               320
+│    └─BatchNorm2d: 2-234                          64
+│    └─LeakyReLU: 2-235                            --
+├─Sequential: 1-69                                 --
+│    └─Conv2d: 2-236                               320
+│    └─BatchNorm2d: 2-237                          64
+│    └─LeakyReLU: 2-238                            --
+├─Sequential: 1-70                                 --
+│    └─Conv2d: 2-239                               18,464
+│    └─BatchNorm2d: 2-240                          64
+│    └─LeakyReLU: 2-241                            --
+├─Sequential: 1-71                                 --
+│    └─Conv2d: 2-242                               279,968
+│    └─BatchNorm2d: 2-243                          64
+│    └─LeakyReLU: 2-244                            --
+├─bfmodule: 1-72                                   --
+│    └─conv2DBatchNormRelu: 2-245                  --
+│    │    └─Sequential: 3-322                      4,224
+│    └─Sequential: 2-246                           --
+│    │    └─residualBlock: 3-323                   78,208
+│    └─Sequential: 2-247                           --
+│    │    └─residualBlock: 3-324                   78,208
+│    └─Sequential: 2-248                           --
+│    │    └─residualBlock: 3-325                   78,208
+│    └─Sequential: 2-249                           --
+│    │    └─residualBlock: 3-326                   230,144
+│    └─pyramidPooling: 2-250                       --
+│    │    └─ModuleList: 3-327                      49,920
+│    │    └─LeakyReLU: 3-328                       --
+│    └─conv2DBatchNormRelu: 2-251                  --
+│    │    └─Sequential: 3-329                      73,856
+│    └─conv2DBatchNormRelu: 2-252                  --
+│    │    └─Sequential: 3-330                      18,496
+│    └─conv2DBatchNormRelu: 2-253                  --
+│    │    └─Sequential: 3-331                      18,496
+│    └─conv2DBatchNormRelu: 2-254                  --
+│    │    └─Sequential: 3-332                      18,496
+│    └─conv2DBatchNormRelu: 2-255                  --
+│    │    └─Sequential: 3-333                      73,856
+│    └─conv2DBatchNormRelu: 2-256                  --
+│    │    └─Sequential: 3-334                      55,424
+│    └─conv2DBatchNormRelu: 2-257                  --
+│    │    └─Sequential: 3-335                      55,424
+│    └─Sequential: 2-258                           --
+│    │    └─conv2DBatchNormRelu: 3-336             55,424
+│    │    └─Conv2d: 3-337                          577
+│    └─Conv2d: 2-259                               1,153
+│    └─Conv2d: 2-260                               577
+│    └─Conv2d: 2-261                               577
+│    └─Conv2d: 2-262                               577
+├─Sequential: 1-73                                 --
+│    └─Conv2d: 2-263                               18,464
+│    └─BatchNorm2d: 2-264                          64
+│    └─LeakyReLU: 2-265                            --
+├─Sequential: 1-74                                 --
+│    └─Conv2d: 2-266                               320
+│    └─BatchNorm2d: 2-267                          64
+│    └─LeakyReLU: 2-268                            --
+├─Sequential: 1-75                                 --
+│    └─Conv2d: 2-269                               320
+│    └─BatchNorm2d: 2-270                          64
+│    └─LeakyReLU: 2-271                            --
+├─Sequential: 1-76                                 --
+│    └─Conv2d: 2-272                               320
+│    └─BatchNorm2d: 2-273                          64
+│    └─LeakyReLU: 2-274                            --
+├─Sequential: 1-77                                 --
+│    └─Conv2d: 2-275                               279,968
+│    └─BatchNorm2d: 2-276                          64
+│    └─LeakyReLU: 2-277                            --
+├─Sequential: 1-78                                 --
+│    └─Conv2d: 2-278                               1,184
+│    └─BatchNorm2d: 2-279                          64
+│    └─LeakyReLU: 2-280                            --
+├─bfmodule: 1-79                                   --
+│    └─conv2DBatchNormRelu: 2-281                  --
+│    │    └─Sequential: 3-338                      8,320
+│    └─Sequential: 2-282                           --
+│    │    └─residualBlock: 3-339                   78,208
+│    └─Sequential: 2-283                           --
+│    │    └─residualBlock: 3-340                   78,208
+│    └─Sequential: 2-284                           --
+│    │    └─residualBlock: 3-341                   78,208
+│    └─Sequential: 2-285                           --
+│    │    └─residualBlock: 3-342                   230,144
+│    └─pyramidPooling: 2-286                       --
+│    │    └─ModuleList: 3-343                      49,920
+│    │    └─LeakyReLU: 3-344                       --
+│    └─conv2DBatchNormRelu: 2-287                  --
+│    │    └─Sequential: 3-345                      73,856
+│    └─conv2DBatchNormRelu: 2-288                  --
+│    │    └─Sequential: 3-346                      18,496
+│    └─conv2DBatchNormRelu: 2-289                  --
+│    │    └─Sequential: 3-347                      18,496
+│    └─conv2DBatchNormRelu: 2-290                  --
+│    │    └─Sequential: 3-348                      18,496
+│    └─conv2DBatchNormRelu: 2-291                  --
+│    │    └─Sequential: 3-349                      73,856
+│    └─conv2DBatchNormRelu: 2-292                  --
+│    │    └─Sequential: 3-350                      55,424
+│    └─conv2DBatchNormRelu: 2-293                  --
+│    │    └─Sequential: 3-351                      55,424
+│    └─Sequential: 2-294                           --
+│    │    └─conv2DBatchNormRelu: 3-352             55,424
+│    │    └─Conv2d: 3-353                          577
+│    └─Conv2d: 2-295                               1,153
+│    └─Conv2d: 2-296                               577
+│    └─Conv2d: 2-297                               577
+│    └─Conv2d: 2-298                               577
+├─ModuleList: 1-80                                 --
+│    └─WarpModule: 2-299                           --
+│    └─WarpModule: 2-300                           --
+│    └─WarpModule: 2-301                           --
+│    └─WarpModule: 2-302                           --
+├─ModuleList: 1-81                                 --
+│    └─butterfly4D: 2-303                          (recursive)
+│    │    └─Sequential: 3-354                      (recursive)
+│    │    └─sepConv4dBlock: 3-355                  (recursive)
+│    │    └─sepConv4dBlock: 3-356                  (recursive)
+│    │    └─sepConv4dBlock: 3-357                  (recursive)
+│    │    └─sepConv4dBlock: 3-358                  (recursive)
+│    │    └─sepConv4dBlock: 3-359                  (recursive)
+│    └─butterfly4D: 2-304                          (recursive)
+│    │    └─Sequential: 3-360                      (recursive)
+│    │    └─sepConv4dBlock: 3-361                  (recursive)
+│    │    └─sepConv4dBlock: 3-362                  (recursive)
+│    │    └─sepConv4dBlock: 3-363                  (recursive)
+│    │    └─sepConv4dBlock: 3-364                  (recursive)
+│    │    └─sepConv4dBlock: 3-365                  (recursive)
+│    └─butterfly4D: 2-305                          (recursive)
+│    │    └─Sequential: 3-366                      (recursive)
+│    │    └─sepConv4dBlock: 3-367                  (recursive)
+│    │    └─sepConv4dBlock: 3-368                  (recursive)
+│    │    └─sepConv4dBlock: 3-369                  (recursive)
+│    │    └─sepConv4dBlock: 3-370                  (recursive)
+│    │    └─sepConv4dBlock: 3-371                  (recursive)
+│    └─butterfly4D: 2-306                          (recursive)
+│    │    └─Sequential: 3-372                      (recursive)
+│    │    └─sepConv4dBlock: 3-373                  (recursive)
+│    │    └─sepConv4dBlock: 3-374                  (recursive)
+│    │    └─sepConv4dBlock: 3-375                  (recursive)
+│    │    └─sepConv4dBlock: 3-376                  (recursive)
+│    │    └─sepConv4dBlock: 3-377                  (recursive)
+│    └─butterfly4D: 2-307                          (recursive)
+│    │    └─Sequential: 3-378                      (recursive)
+│    │    └─sepConv4dBlock: 3-379                  (recursive)
+│    │    └─sepConv4dBlock: 3-380                  (recursive)
+│    │    └─sepConv4dBlock: 3-381                  (recursive)
+│    │    └─sepConv4dBlock: 3-382                  (recursive)
+│    │    └─sepConv4dBlock: 3-383                  (recursive)
+├─ModuleList: 1-82                                 --
+│    └─sepConv4d: 2-308                            (recursive)
+│    │    └─Conv3d: 3-384                          (recursive)
+│    │    └─Conv3d: 3-385                          (recursive)
+│    │    └─ReLU: 3-386                            --
+│    └─sepConv4d: 2-309                            (recursive)
+│    │    └─Conv3d: 3-387                          (recursive)
+│    │    └─Conv3d: 3-388                          (recursive)
+│    │    └─ReLU: 3-389                            --
+│    └─sepConv4d: 2-310                            (recursive)
+│    │    └─Conv3d: 3-390                          (recursive)
+│    │    └─Conv3d: 3-391                          (recursive)
+│    │    └─ReLU: 3-392                            --
+│    └─sepConv4d: 2-311                            (recursive)
+│    │    └─Conv3d: 3-393                          (recursive)
+│    │    └─Conv3d: 3-394                          (recursive)
+│    │    └─ReLU: 3-395                            --
+│    └─sepConv4d: 2-312                            (recursive)
+│    │    └─Conv3d: 3-396                          (recursive)
+│    │    └─Conv3d: 3-397                          (recursive)
+│    │    └─ReLU: 3-398                            --
+├─ModuleList: 1-83                                 --
+│    └─flow_reg: 2-313                             --
+│    │    └─MaxPool3d: 3-399                       --
+│    └─flow_reg: 2-314                             --
+│    │    └─MaxPool3d: 3-400                       --
+│    └─flow_reg: 2-315                             --
+│    │    └─MaxPool3d: 3-401                       --
+│    └─flow_reg: 2-316                             --
+│    │    └─MaxPool3d: 3-402                       --
+│    └─flow_reg: 2-317                             --
+│    │    └─MaxPool3d: 3-403                       --
+├─ModuleList: 1-84                                 --
+│    └─Sequential: 2-318                           (recursive)
+│    │    └─Sequential: 3-404                      (recursive)
+│    │    └─Sequential: 3-405                      (recursive)
+│    │    └─Sequential: 3-406                      (recursive)
+│    │    └─Sequential: 3-407                      (recursive)
+│    │    └─Sequential: 3-408                      (recursive)
+│    │    └─Sequential: 3-409                      (recursive)
+│    │    └─Conv2d: 3-410                          (recursive)
+│    └─Sequential: 2-319                           (recursive)
+│    │    └─Sequential: 3-411                      (recursive)
+│    │    └─Sequential: 3-412                      (recursive)
+│    │    └─Sequential: 3-413                      (recursive)
+│    │    └─Sequential: 3-414                      (recursive)
+│    │    └─Sequential: 3-415                      (recursive)
+│    │    └─Sequential: 3-416                      (recursive)
+│    │    └─Conv2d: 3-417                          (recursive)
+│    └─Sequential: 2-320                           (recursive)
+│    │    └─Sequential: 3-418                      (recursive)
+│    │    └─Sequential: 3-419                      (recursive)
+│    │    └─Sequential: 3-420                      (recursive)
+│    │    └─Sequential: 3-421                      (recursive)
+│    │    └─Sequential: 3-422                      (recursive)
+│    │    └─Sequential: 3-423                      (recursive)
+│    │    └─Conv2d: 3-424                          (recursive)
+│    └─Sequential: 2-321                           (recursive)
+│    │    └─Sequential: 3-425                      (recursive)
+│    │    └─Sequential: 3-426                      (recursive)
+│    │    └─Sequential: 3-427                      (recursive)
+│    │    └─Sequential: 3-428                      (recursive)
+│    │    └─Sequential: 3-429                      (recursive)
+│    │    └─Sequential: 3-430                      (recursive)
+│    │    └─Conv2d: 3-431                          (recursive)
+│    └─Sequential: 2-322                           (recursive)
+│    │    └─Sequential: 3-432                      (recursive)
+│    │    └─Sequential: 3-433                      (recursive)
+│    │    └─Sequential: 3-434                      (recursive)
+│    │    └─Sequential: 3-435                      (recursive)
+│    │    └─Sequential: 3-436                      (recursive)
+│    │    └─Sequential: 3-437                      (recursive)
+│    │    └─Conv2d: 3-438                          (recursive)
+├─ModuleList: 1-85                                 --
+│    └─Sequential: 2-323                           (recursive)
+│    │    └─Sequential: 3-439                      (recursive)
+│    │    └─Sequential: 3-440                      (recursive)
+│    │    └─Sequential: 3-441                      (recursive)
+│    │    └─Sequential: 3-442                      (recursive)
+│    │    └─Sequential: 3-443                      (recursive)
+│    │    └─Sequential: 3-444                      (recursive)
+│    │    └─Conv2d: 3-445                          (recursive)
+│    └─Sequential: 2-324                           (recursive)
+│    │    └─Sequential: 3-446                      (recursive)
+│    │    └─Sequential: 3-447                      (recursive)
+│    │    └─Sequential: 3-448                      (recursive)
+│    │    └─Sequential: 3-449                      (recursive)
+│    │    └─Sequential: 3-450                      (recursive)
+│    │    └─Sequential: 3-451                      (recursive)
+│    │    └─Conv2d: 3-452                          (recursive)
+│    └─Sequential: 2-325                           (recursive)
+│    │    └─Sequential: 3-453                      (recursive)
+│    │    └─Sequential: 3-454                      (recursive)
+│    │    └─Sequential: 3-455                      (recursive)
+│    │    └─Sequential: 3-456                      (recursive)
+│    │    └─Sequential: 3-457                      (recursive)
+│    │    └─Sequential: 3-458                      (recursive)
+│    │    └─Conv2d: 3-459                          (recursive)
+│    └─Sequential: 2-326                           (recursive)
+│    │    └─Sequential: 3-460                      (recursive)
+│    │    └─Sequential: 3-461                      (recursive)
+│    │    └─Sequential: 3-462                      (recursive)
+│    │    └─Sequential: 3-463                      (recursive)
+│    │    └─Sequential: 3-464                      (recursive)
+│    │    └─Sequential: 3-465                      (recursive)
+│    │    └─Conv2d: 3-466                          (recursive)
+│    └─Sequential: 2-327                           (recursive)
+│    │    └─Sequential: 3-467                      (recursive)
+│    │    └─Sequential: 3-468                      (recursive)
+│    │    └─Sequential: 3-469                      (recursive)
+│    │    └─Sequential: 3-470                      (recursive)
+│    │    └─Sequential: 3-471                      (recursive)
+│    │    └─Sequential: 3-472                      (recursive)
+│    │    └─Conv2d: 3-473                          (recursive)
+===========================================================================
+Total params: 12,717,767
+Trainable params: 12,717,767
+Non-trainable params: 0
+===========================================================================
+fatto
+Traceback (most recent call last):
+  File "submission.py", line 97, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
